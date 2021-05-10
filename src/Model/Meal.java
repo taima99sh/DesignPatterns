@@ -64,9 +64,7 @@ public class Meal {
     public void setCategory(Category category) {
         this.category = category;
     }
-    
-    
-    
+        
 }
 
 
