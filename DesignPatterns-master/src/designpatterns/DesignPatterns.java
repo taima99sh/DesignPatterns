@@ -5,6 +5,7 @@
  */
 package designpatterns;
 
+import SingletonPattern.Setting;
 import DecoratorPattern.Order;
 import DecoratorPattern.Additions;
 import DecoratorPattern.Meals;
@@ -55,7 +56,10 @@ public class DesignPatterns {
         
         DesignPatterns test = new DesignPatterns();
         
-        
+        System.out.println("");
+        System.out.println("******** Strategy Pattern *********");
+        System.out.println("");
+
          System.out.println("******************rating greater than 7 ***********************");
         for (Meal meal : test.applyFilters(mealsList, ratingFilter)) { 		      
            System.out.println(meal.getName());
@@ -68,6 +72,7 @@ public class DesignPatterns {
       }
         
         //////// Decorator Pattern
+        System.out.println("");
         System.out.println("******** Decorator Pattern *********");
         
         
@@ -79,6 +84,19 @@ public class DesignPatterns {
         order2 = new Beverage(order2);
         order2 = new SpecialAdditions(order2);
         System.out.println(order2.getDescription() +"$"+ order2.price());
+        
+        
+        //////// Singleton Pattern
+        System.out.println("");
+        System.out.println("******** Singleton Pattern *********");
+
+        Setting setting = Setting.getSettingInstance("Green", "English");
+//        System.out.println(setting.toString());
+        
+        Setting setting2 = Setting.getSettingInstance("Red", "Arabic");
+        System.out.println(setting.toString());
+        System.out.println(setting2.toString());
+        // print the same result , return the very first object
         
         // TODO code application logic here
     }
